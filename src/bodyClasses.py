@@ -22,18 +22,18 @@ class BodyVector:
 
 class Body:
     """This class stores all relevant information for a single body."""
-    mass:             float
-    position:         BodyVector
-    velocity:         BodyVector
-    acceleration:     BodyVector
-    previousPosition: BodyVector 
+    mass:    float        ## kg
+    pos:     BodyVector   ## m
+    vel:     BodyVector   ## m/s
+    accel:   BodyVector   ## m/s^2
+    prevPos: BodyVector   ## m
     
-    def __init__(self, mass=0, position=BodyVector(), velocity=BodyVector(), acceleration=BodyVector(), previousPosition=BodyVector()) -> None:
-        self.mass             = mass
-        self.position         = position
-        self.velocity         = velocity
-        self.acceleration     = acceleration
-        self.previousPosition = previousPosition
+    def __init__(self, mass=0, pos=BodyVector(), vel=BodyVector(), accel=BodyVector(), prevPos=BodyVector()) -> None:
+        self.mass    = mass
+        self.pos     = pos
+        self.vel     = vel
+        self.accel   = accel
+        self.prevPos = prevPos
 
 
     def __repr__(self) -> str:
@@ -42,11 +42,11 @@ class Body:
 
     def __str__(self) -> str:
         return f"""
-mass:              {self.mass}
-position:          {self.position}
-velocity:          {self.velocity}
-acceleration:      {self.acceleration}
-previous position: {self.previousPosition}
+Mass:              {self.mass}
+Position:          {self.pos}
+Velocity:          {self.vel}
+Acceleration:      {self.accel}
+Previous Position: {self.prevPos}
 """
 
 
