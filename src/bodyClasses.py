@@ -11,7 +11,13 @@ class BodyVector:
 
 
     def __repr__(self) -> str:
+        return f"BodyVector({self.x}, {self.y}, {self.z})"
+
+
+    def __str__(self) -> str:
         return f"[{self.x}, {self.y}, {self.z}]"
+
+
 
 
 class Body:
@@ -31,6 +37,10 @@ class Body:
 
 
     def __repr__(self) -> str:
+        return f"Body({self.mass}, {self.pos}, {self.vel}, {self.accel}, {self.prevPos})"
+
+
+    def __str__(self) -> str:
         return f"""
 mass:              {self.mass}
 position:          {self.position}
