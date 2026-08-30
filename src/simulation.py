@@ -57,12 +57,12 @@ class Body:
     accel:   BodyVector   ## m/s^2
     prevPos: BodyVector   ## m
 
-    def __init__(self, mass=0, pos=BodyVector(), vel=BodyVector(), accel=BodyVector(), prevPos=BodyVector()) -> None:
+    def __init__(self, mass=0, pos=None, vel=None, accel=None, prevPos=None) -> None:
         self.mass    = mass
-        self.pos     = pos
-        self.vel     = vel
-        self.accel   = accel
-        self.prevPos = prevPos
+        self.pos     = pos if pos is not None else BodyVector()
+        self.vel     = vel if vel is not None else BodyVector()
+        self.accel   = accel if accel is not None else BodyVector()
+        self.prevPos = prevPos if prevPos is not None else BodyVector()
 
 
     def __repr__(self) -> str:
