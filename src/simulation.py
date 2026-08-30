@@ -23,6 +23,10 @@ class BodyVector:
         return f"[{self.x}, {self.y}, {self.z}]"
 
 
+    def __eq__(self, other: Self) -> Self:
+        return (self.x == other.x) and (self.y == other.y) and (self.z == other.z)
+
+
     def __add__(self, other: Self) -> Self:
         return BodyVector(self.x + other.x, self.y + other.y, self.z + other.z)
 
