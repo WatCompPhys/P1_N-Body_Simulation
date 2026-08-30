@@ -25,7 +25,7 @@ class BodyVector:
 
 
 class Body:
-    """stores all relevant information for a single body."""
+    """stores all relevant information for a single Body."""
     mass:    float        ## kg
     pos:     BodyVector   ## m
     vel:     BodyVector   ## m/s
@@ -52,3 +52,18 @@ Velocity:          {self.vel}
 Acceleration:      {self.accel}
 Previous Position: {self.prevPos}
 """
+
+
+    def getPosition(self) -> BodyVector:
+        """returns position of Body"""
+        return self.pos
+
+
+    def getVelocity(self) -> BodyVector:
+        """returns velocity of Body"""
+        return self.vel
+
+
+    def setAcceleration(self, a: BodyVector) -> None:
+        """takes a BodyVector; gives it to the Body"""
+        self.accel = a
