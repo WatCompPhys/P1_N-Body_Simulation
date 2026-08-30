@@ -3,7 +3,7 @@
 
 
 class BodyVector:
-    """This class stores a single 3D vector"""
+    """stores a single 3D vector"""
     x: float
     y: float
     z: float
@@ -25,7 +25,7 @@ class BodyVector:
 
 
 class Body:
-    """This class stores all relevant information for a single body."""
+    """stores all relevant information for a single body."""
     mass:    float        ## kg
     pos:     BodyVector   ## m
     vel:     BodyVector   ## m/s
@@ -52,8 +52,3 @@ Velocity:          {self.vel}
 Acceleration:      {self.accel}
 Previous Position: {self.prevPos}
 """
-
-
-Earth = Body((5.972*10**24))
-
-print(Earth)
