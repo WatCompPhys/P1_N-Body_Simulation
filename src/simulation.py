@@ -1,6 +1,7 @@
 ##File containing step function and simulation class
 
-
+import math
+from typing import Self
 
 class BodyVector:
     """stores a single 3D vector"""
@@ -20,6 +21,24 @@ class BodyVector:
 
     def __str__(self) -> str:
         return f"[{self.x}, {self.y}, {self.z}]"
+
+
+    def __add__(self, other: Self) -> Self:
+        return BodyVector(self.x + other.x, self.y + other.y, self.z + other.z)
+
+
+    def __sub__(self, other: Self) -> Self:
+        return BodyVector(self.x - other.x, self.y - other.y, self.z - other.z)
+
+
+    def scale(self, s: float) -> Self:
+        """scales a BodyVector by a constant"""
+        return BodyVector(self.x * s, self.y * s, self.z * s)
+
+
+    def magnitude(self) -> float:
+        """returns the magnitude of a BodyVector"""
+        return math.sqrt((self.x)**2 + (self.y)**2 + (self.z)**2)
 
 
 
