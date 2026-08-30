@@ -23,7 +23,9 @@ class BodyVector:
         return f"[{self.x}, {self.y}, {self.z}]"
 
 
-    def __eq__(self, other: Self) -> Self:
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, BodyVector):
+            return NotImplemented
         return (self.x == other.x) and (self.y == other.y) and (self.z == other.z)
 
 
