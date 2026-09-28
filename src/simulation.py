@@ -2,6 +2,7 @@
 
 import math
 from typing import Self
+import constants
 
 class BodyVector:
     """stores a single 3D vector"""
