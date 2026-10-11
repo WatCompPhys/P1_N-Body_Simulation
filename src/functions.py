@@ -15,7 +15,7 @@ class ForceCalculator:
                 if r_mag == 0:
                     continue  
                 f_mag = (constants.physicsConstants.G * bodies[i].mass * bodies[j].mass) / (r_mag ** 2)
-                f_vec = scale(r_vec, f_mag / r_mag) 
-                bodies[i].accel += scale(f_vec, 1 / bodies[i].mass)
-                bodies[j].accel -= scale(f_vec, 1 / bodies[j].mass)
+                f_vec = r_vec.scale(f_mag / r_mag) 
+                bodies[i].accel += f_vec.scale(1 / bodies[i].mass)
+                bodies[j].accel -= f_vec.scale(1 / bodies[j].mass)
         
