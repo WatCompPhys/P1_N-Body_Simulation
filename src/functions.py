@@ -1,9 +1,5 @@
-import numpy as np
-import math
 import constants
 import simulation
-
-''' After a quick google I realized you might want a helper function'''
 
 class ForceCalculator: 
     def gravitationalForces(self, a : Body, b : Body) -> BodyVector:
@@ -26,3 +22,23 @@ class ForceCalculator:
             for j in range(i + 1, len(bodies)):
                 bodies[i].accel += self.gravitationalForces(bodies[i], bodies[j]).scale(1 / bodies[i].mass)
                 bodies[j].accel -= self.gravitationalForces(bodies[i], bodies[j]).scale(1 / bodies[j].mass)
+
+class KinematicCalculator: 
+    # int time_each_step
+    
+    ''' 
+    As I need to access the acceleration of the bodies from a prior step, 
+    I will need to pass in a list of accelerations.
+    
+    An additional step is needed before calling the computeForces function to 
+    store the current accelerations of the bodies in a list, which will then be 
+    passed into this function
+    '''
+       
+    def KinemtaticCalculator(self, bodies: list[Body], oldacc, time_each_step: float): 
+        i = 0
+        for body in bodies: 
+            body.pos = body.pos + body.vel.scale(time_each_step) + body.accel.scale(0.5 * time_each_step ** 2)
+            body.vel = body.vel + (oldacc[i]+body.accel).scale(0.5 * time_each_step)
+            i += 1
+        
