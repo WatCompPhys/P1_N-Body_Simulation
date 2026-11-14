@@ -107,4 +107,6 @@ bodies = [Body(initialConditions.massDist,
           for _ in range(physicsConstants.N)]
 
 
-print(bodies)
+# print(bodies)
+b=bodies[0]
+print(b.getPosition())
